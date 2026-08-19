@@ -18,11 +18,6 @@ import time
 
 from micropython import const
 
-try:
-    from typing import Tuple
-except ImportError:
-    pass
-
 __version__ = "0.0.0+auto.0"
 __repo__ = "https://github.com/jposada202020/MicroPython_SHT4X.git"
 
@@ -143,7 +138,7 @@ class SHT4X:
         return self.measurements[0]
 
     @property
-    def measurements(self) -> Tuple[float, float]:
+    def measurements(self) -> tuple[float, float]:
         """both `temperature` and `relative_humidity`, read simultaneously
         If you use t the heater function, sensor will be not give a response
         back. Waiting time is added to the logic to account for this situation
